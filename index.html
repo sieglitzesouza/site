@@ -1,94 +1,229 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sieglitz & Souza Advocacia</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
+
+:root{
+--gold:#d4b06a;
+--gold-light:#f0d18a;
+--bg:#050505;
+}
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-    background:#000;
-    color:#d4b06a;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align:center;
+background:
+radial-gradient(circle at top left, rgba(212,176,106,.12), transparent 30%),
+radial-gradient(circle at bottom right, rgba(212,176,106,.10), transparent 30%),
+var(--bg);
+
+font-family:'Cormorant Garamond', serif;
+color:var(--gold);
+text-align:center;
+overflow-x:hidden;
 }
 
 .container{
-    max-width:900px;
-    margin:auto;
-    padding:40px 20px 80px;
+max-width:900px;
+margin:auto;
+padding:40px 25px 80px;
 }
 
 .logo{
-    width:340px;
-    max-width:90%;
-    margin-bottom:40px;
+width:260px;
+max-width:85%;
+margin-bottom:40px;
+filter: drop-shadow(0 0 10px rgba(212,176,106,.15));
 }
 
 h1{
-    font-size:4rem;
-    font-weight:700;
-    color:#d4b06a;
-    margin-bottom:40px;
+font-size:4rem;
+font-weight:600;
+margin-bottom:40px;
+background:linear-gradient(
+180deg,
+#f5d98f,
+#d4b06a,
+#b68c45
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-.botao{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:15px;
-
-    width:100%;
-    max-width:850px;
-
-    margin:22px auto;
-    padding:28px;
-
-    border:2px solid #d4b06a;
-    border-radius:18px;
-
-    color:#d4b06a;
-    text-decoration:none;
-    font-size:2rem;
-    font-weight:500;
-
-    transition:0.3s;
+.divisor{
+width:220px;
+height:1px;
+background:linear-gradient(to right, transparent, var(--gold), transparent);
+margin:20px auto 45px;
 }
 
-.botao:hover{
-    background:#d4b06a;
-    color:#000;
+.card{
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+width:100%;
+margin:20px auto;
+
+padding:24px 30px;
+
+border:1px solid rgba(212,176,106,.75);
+border-radius:24px;
+
+text-decoration:none;
+color:var(--gold);
+
+background:rgba(255,255,255,.01);
+backdrop-filter:blur(5px);
+
+transition:.35s ease;
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:
+0 0 30px rgba(212,176,106,.15),
+0 0 8px rgba(212,176,106,.25);
+}
+
+.left{
+display:flex;
+align-items:center;
+gap:22px;
+}
+
+.left i{
+font-size:2rem;
+width:40px;
+}
+
+.texto{
+font-size:2.1rem;
+font-weight:500;
+}
+
+.arrow{
+font-size:1.5rem;
+opacity:.7;
 }
 
 .endereco{
-    margin-top:60px;
-    line-height:1.7;
-    font-size:1.8rem;
-    color:#d4b06a;
+margin-top:50px;
+font-size:1.7rem;
+line-height:1.7;
+}
+
+.endereco i{
+margin-right:8px;
+}
+
+.rodape{
+margin-top:60px;
+padding-top:30px;
+border-top:1px solid rgba(212,176,106,.2);
+
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+
+font-size:1.3rem;
+}
+
+.rodape div{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.whatsapp-float{
+position:fixed;
+bottom:25px;
+right:25px;
+
+width:75px;
+height:75px;
+
+border-radius:50%;
+
+background:linear-gradient(
+135deg,
+#f0d18a,
+#d4b06a
+);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-decoration:none;
+color:#000;
+
+font-size:2rem;
+
+box-shadow:
+0 0 25px rgba(212,176,106,.35);
+
+animation:pulse 2s infinite;
+z-index:999;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
 }
 
 @media(max-width:768px){
 
-    h1{
-        font-size:2.4rem;
-    }
-
-    .botao{
-        font-size:1.5rem;
-        padding:22px;
-    }
-
-    .endereco{
-        font-size:1.3rem;
-    }
+.logo{
+width:180px;
 }
+
+h1{
+font-size:2.6rem;
+}
+
+.texto{
+font-size:1.5rem;
+}
+
+.card{
+padding:20px;
+}
+
+.endereco{
+font-size:1.25rem;
+}
+
+.rodape{
+font-size:1rem;
+}
+}
+
 </style>
 
 </head>
@@ -97,28 +232,72 @@ h1{
 
 <div class="container">
 
-<img src="logo.png" alt="Sieglitz & Souza Advocacia" class="logo">
+<img src="logo.png" class="logo" alt="Sieglitz & Souza">
 
 <h1>Sieglitz & Souza Advocacia</h1>
 
-<a class="botao"
+<div class="divisor"></div>
+
+<a class="card"
 href="https://wa.me/5548991368351"
 target="_blank">
-📱 WhatsApp </a>
 
-<a class="botao"
+<div class="left">
+<i class="fab fa-whatsapp"></i>
+<div class="texto">WhatsApp</div>
+</div>
+
+<div class="arrow">
+<i class="fas fa-chevron-right"></i>
+</div>
+
+</a>
+
+<a class="card"
 href="https://www.instagram.com/sieglitzesouza"
 target="_blank">
-📸 Instagram </a>
 
-<a class="botao"
+<div class="left">
+<i class="fab fa-instagram"></i>
+<div class="texto">Instagram</div>
+</div>
+
+<div class="arrow">
+<i class="fas fa-chevron-right"></i>
+</div>
+
+</a>
+
+<a class="card"
 href="mailto:contato@sieglitzesouza.com.br">
-📧 E-mail </a>
 
-<a class="botao"
+<div class="left">
+<i class="fas fa-envelope"></i>
+<div class="texto">E-mail</div>
+</div>
+
+<div class="arrow">
+<i class="fas fa-chevron-right"></i>
+</div>
+
+</a>
+
+<a class="card"
 href="https://maps.google.com/?q=Rua+Vitor+Meireles+851+Sala+02+Criciuma+SC"
 target="_blank">
-📍 Como chegar </a>
+
+<div class="left">
+<i class="fas fa-location-dot"></i>
+<div class="texto">Como chegar</div>
+</div>
+
+<div class="arrow">
+<i class="fas fa-chevron-right"></i>
+</div>
+
+</a>
+
+<div class="divisor"></div>
 
 <div class="endereco">
 Rua Vitor Meireles, 851, Sala 02<br>
@@ -127,7 +306,30 @@ Criciúma - SC<br>
 CEP 88802-050
 </div>
 
+<div class="rodape">
+
+<div>
+<i class="fas fa-shield-halved"></i>
+Atendimento Personalizado
 </div>
+
+<div>
+<i class="fas fa-scale-balanced"></i>
+Excelência Jurídica
+</div>
+
+<div>
+<i class="fas fa-handshake"></i>
+Compromisso e Confiança
+</div>
+
+</div>
+
+</div>
+
+<a class="whatsapp-float"
+href="https://wa.me/5548991368351"
+target="_blank"> <i class="fab fa-whatsapp"></i> </a>
 
 </body>
 </html>
