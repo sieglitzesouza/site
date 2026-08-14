@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
@@ -7,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Sieglitz & Souza Advocacia</title>
+
+<meta name="description" content="Sieglitz & Souza Advocacia. Atendimento jurídico em Criciúma/SC.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,209 +20,476 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <style>
 
 :root{
---gold:#d4b06a;
---gold-light:#f0d18a;
---bg:#050505;
+    --gold:#d4b06a;
+    --gold-light:#f0d18a;
+    --gold-dark:#a9823e;
+    --bg:#050505;
 }
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-background:
-radial-gradient(circle at top left, rgba(212,176,106,.12), transparent 30%),
-radial-gradient(circle at bottom right, rgba(212,176,106,.10), transparent 30%),
-var(--bg);
+    background:
+        radial-gradient(circle at 15% 10%, rgba(212,176,106,.10), transparent 30%),
+        radial-gradient(circle at 85% 80%, rgba(212,176,106,.08), transparent 30%),
+        var(--bg);
 
-font-family:'Cormorant Garamond', serif;
-color:var(--gold);
-text-align:center;
-overflow-x:hidden;
+    color:var(--gold);
+
+    font-family:'Cormorant Garamond', serif;
+
+    text-align:center;
+
+    overflow-x:hidden;
 }
 
 .container{
-max-width:900px;
-margin:auto;
-padding:40px 25px 80px;
+    width:100%;
+    max-width:950px;
+
+    margin:0 auto;
+
+    padding:45px 25px 80px;
 }
+
+/* LOGO */
 
 .logo{
-width:260px;
-max-width:85%;
-margin-bottom:40px;
-filter: drop-shadow(0 0 10px rgba(212,176,106,.15));
+    width:260px;
+    max-width:80%;
+
+    margin-bottom:38px;
+
+    filter:
+        drop-shadow(0 0 10px rgba(212,176,106,.12));
+
+    animation:fadeDown 1s ease;
 }
+
+/* TÍTULO */
 
 h1{
-font-size:4rem;
-font-weight:600;
-margin-bottom:40px;
-background:linear-gradient(
-180deg,
-#f5d98f,
-#d4b06a,
-#b68c45
-);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+    font-size:4rem;
+    font-weight:600;
+
+    margin-bottom:25px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--gold-light),
+            var(--gold),
+            var(--gold-dark)
+        );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:fadeUp 1s ease;
 }
+
+/* DIVISOR */
 
 .divisor{
-width:220px;
-height:1px;
-background:linear-gradient(to right, transparent, var(--gold), transparent);
-margin:20px auto 45px;
+    width:220px;
+    height:1px;
+
+    margin:20px auto 42px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            var(--gold),
+            transparent
+        );
 }
 
+/* BOTÕES */
+
 .card{
-display:flex;
-align-items:center;
-justify-content:space-between;
+    display:flex;
 
-width:100%;
-margin:20px auto;
+    align-items:center;
+    justify-content:space-between;
 
-padding:24px 30px;
+    width:100%;
 
-border:1px solid rgba(212,176,106,.75);
-border-radius:24px;
+    margin:20px auto;
 
-text-decoration:none;
-color:var(--gold);
+    padding:23px 30px;
 
-background:rgba(255,255,255,.01);
-backdrop-filter:blur(5px);
+    border:1px solid rgba(212,176,106,.75);
 
-transition:.35s ease;
+    border-radius:22px;
+
+    text-decoration:none;
+
+    color:var(--gold);
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(255,255,255,.025),
+            rgba(255,255,255,.005)
+        );
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+    animation:fadeUp .8s ease both;
 }
 
 .card:hover{
-transform:translateY(-4px);
-box-shadow:
-0 0 30px rgba(212,176,106,.15),
-0 0 8px rgba(212,176,106,.25);
+    transform:translateY(-4px);
+
+    border-color:var(--gold-light);
+
+    box-shadow:
+        0 0 30px rgba(212,176,106,.14),
+        inset 0 0 20px rgba(212,176,106,.025);
 }
 
 .left{
-display:flex;
-align-items:center;
-gap:22px;
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
 }
 
 .left i{
-font-size:2rem;
-width:40px;
+    width:38px;
+
+    font-size:1.8rem;
 }
 
 .texto{
-font-size:2.1rem;
-font-weight:500;
+    font-size:2rem;
+    font-weight:500;
 }
 
 .arrow{
-font-size:1.5rem;
-opacity:.7;
+    font-size:1.2rem;
+
+    opacity:.65;
+
+    transition:.3s;
 }
 
+.card:hover .arrow{
+    transform:translateX(5px);
+
+    opacity:1;
+}
+
+/* BANNER AGRONEGÓCIO */
+
+.agro-section{
+    margin:75px auto 55px;
+
+    animation:fadeUp 1s ease;
+}
+
+.agro-title{
+    font-size:1.15rem;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+    color:var(--gold);
+
+    opacity:.85;
+}
+
+.agro-banner{
+    position:relative;
+
+    width:100%;
+
+    overflow:hidden;
+
+    border:1px solid rgba(212,176,106,.65);
+
+    border-radius:20px;
+
+    background:#000;
+
+    box-shadow:
+        0 0 35px rgba(212,176,106,.10);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.agro-banner:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 0 45px rgba(212,176,106,.18);
+}
+
+.agro-banner img{
+    display:block;
+
+    width:100%;
+
+    height:auto;
+
+    transition:
+        transform .7s ease,
+        filter .7s ease;
+}
+
+.agro-banner:hover img{
+    transform:scale(1.015);
+
+    filter:brightness(1.04);
+}
+
+/* ENDEREÇO */
+
 .endereco{
-margin-top:50px;
-font-size:1.7rem;
-line-height:1.7;
+    margin-top:50px;
+
+    font-size:1.65rem;
+
+    line-height:1.7;
+
+    color:var(--gold);
 }
 
 .endereco i{
-margin-right:8px;
+    margin-right:8px;
 }
 
+/* RODAPÉ */
+
 .rodape{
-margin-top:60px;
-padding-top:30px;
-border-top:1px solid rgba(212,176,106,.2);
+    margin-top:60px;
 
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
+    padding-top:30px;
 
-font-size:1.3rem;
+    border-top:
+        1px solid rgba(212,176,106,.20);
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:35px;
+
+    flex-wrap:wrap;
+
+    font-size:1.2rem;
 }
 
 .rodape div{
-display:flex;
-align-items:center;
-gap:10px;
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
 }
+
+.rodape i{
+    color:var(--gold-light);
+}
+
+/* WHATSAPP FLUTUANTE */
 
 .whatsapp-float{
-position:fixed;
-bottom:25px;
-right:25px;
+    position:fixed;
 
-width:75px;
-height:75px;
+    bottom:25px;
+    right:25px;
 
-border-radius:50%;
+    width:68px;
+    height:68px;
 
-background:linear-gradient(
-135deg,
-#f0d18a,
-#d4b06a
-);
+    border-radius:50%;
 
-display:flex;
-align-items:center;
-justify-content:center;
+    display:flex;
 
-text-decoration:none;
-color:#000;
+    align-items:center;
+    justify-content:center;
 
-font-size:2rem;
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold-light),
+            var(--gold)
+        );
 
-box-shadow:
-0 0 25px rgba(212,176,106,.35);
+    color:#000;
 
-animation:pulse 2s infinite;
-z-index:999;
+    text-decoration:none;
+
+    font-size:1.9rem;
+
+    box-shadow:
+        0 0 25px rgba(212,176,106,.30);
+
+    z-index:999;
+
+    animation:pulse 2.5s infinite;
 }
+
+.whatsapp-float:hover{
+    transform:scale(1.08);
+
+    box-shadow:
+        0 0 35px rgba(212,176,106,.50);
+}
+
+/* ANIMAÇÕES */
 
 @keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.08);}
-100%{transform:scale(1);}
+
+    0%{
+        box-shadow:
+            0 0 0 0 rgba(212,176,106,.35);
+    }
+
+    70%{
+        box-shadow:
+            0 0 0 15px rgba(212,176,106,0);
+    }
+
+    100%{
+        box-shadow:
+            0 0 0 0 rgba(212,176,106,0);
+    }
 }
+
+@keyframes fadeDown{
+
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* CELULAR */
 
 @media(max-width:768px){
 
-.logo{
-width:180px;
-}
+    .container{
+        padding:
+            30px 16px 70px;
+    }
 
-h1{
-font-size:2.6rem;
-}
+    .logo{
+        width:190px;
 
-.texto{
-font-size:1.5rem;
-}
+        margin-bottom:30px;
+    }
 
-.card{
-padding:20px;
-}
+    h1{
+        font-size:2.6rem;
 
-.endereco{
-font-size:1.25rem;
-}
+        line-height:1.05;
+    }
 
-.rodape{
-font-size:1rem;
-}
+    .divisor{
+        width:160px;
+
+        margin-bottom:32px;
+    }
+
+    .card{
+        padding:19px 20px;
+
+        border-radius:18px;
+    }
+
+    .left{
+        gap:15px;
+    }
+
+    .left i{
+        width:30px;
+
+        font-size:1.45rem;
+    }
+
+    .texto{
+        font-size:1.55rem;
+    }
+
+    .arrow{
+        font-size:1rem;
+    }
+
+    .agro-section{
+        margin-top:55px;
+    }
+
+    .agro-title{
+        font-size:.9rem;
+
+        letter-spacing:2.5px;
+    }
+
+    .agro-banner{
+        border-radius:14px;
+    }
+
+    .endereco{
+        font-size:1.25rem;
+
+        line-height:1.6;
+    }
+
+    .rodape{
+        font-size:.95rem;
+
+        gap:18px;
+
+        flex-direction:column;
+    }
+
+    .whatsapp-float{
+        width:60px;
+        height:60px;
+
+        bottom:18px;
+        right:18px;
+
+        font-size:1.6rem;
+    }
 }
 
 </style>
@@ -232,104 +500,206 @@ font-size:1rem;
 
 <div class="container">
 
-<img src="logo.png" class="logo" alt="Sieglitz & Souza">
+    <!-- LOGO -->
 
-<h1>Sieglitz & Souza Advocacia</h1>
+    <img
+        src="logo.png"
+        class="logo"
+        alt="Sieglitz & Souza Advocacia"
+    >
 
-<div class="divisor"></div>
+    <!-- TÍTULO -->
 
-<a class="card"
-href="https://wa.me/5548991368351"
-target="_blank">
+    <h1>
+        Sieglitz & Souza Advocacia
+    </h1>
 
-<div class="left">
-<i class="fab fa-whatsapp"></i>
-<div class="texto">WhatsApp</div>
+    <div class="divisor"></div>
+
+
+    <!-- WHATSAPP -->
+
+    <a
+        class="card"
+        href="https://wa.me/5548991368351"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+
+        <div class="left">
+
+            <i class="fab fa-whatsapp"></i>
+
+            <div class="texto">
+                WhatsApp
+            </div>
+
+        </div>
+
+        <div class="arrow">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+
+    </a>
+
+
+    <!-- INSTAGRAM -->
+
+    <a
+        class="card"
+        href="https://www.instagram.com/sieglitzesouza"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+
+        <div class="left">
+
+            <i class="fab fa-instagram"></i>
+
+            <div class="texto">
+                Instagram
+            </div>
+
+        </div>
+
+        <div class="arrow">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+
+    </a>
+
+
+    <!-- E-MAIL -->
+
+    <a
+        class="card"
+        href="mailto:contato@sieglitzesouza.com.br"
+    >
+
+        <div class="left">
+
+            <i class="fas fa-envelope"></i>
+
+            <div class="texto">
+                E-mail
+            </div>
+
+        </div>
+
+        <div class="arrow">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+
+    </a>
+
+
+    <!-- COMO CHEGAR -->
+
+    <a
+        class="card"
+        href="https://www.google.com/maps/search/?api=1&query=Rua+Vitor+Meireles+851+Sala+02+Criciuma+SC"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+
+        <div class="left">
+
+            <i class="fas fa-location-dot"></i>
+
+            <div class="texto">
+                Como chegar
+            </div>
+
+        </div>
+
+        <div class="arrow">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+
+    </a>
+
+
+    <!-- AGRONEGÓCIO -->
+
+    <section class="agro-section">
+
+        <div class="agro-title">
+            Nossa atuação especializada
+        </div>
+
+        <div class="agro-banner">
+
+            <img
+                src="agro.png"
+                alt="Direito do Agronegócio - Sieglitz & Souza Advocacia"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- DIVISOR -->
+
+    <div class="divisor"></div>
+
+
+    <!-- ENDEREÇO -->
+
+    <div class="endereco">
+
+        <i class="fas fa-location-dot"></i>
+
+        Rua Vitor Meireles, 851, Sala 02<br>
+
+        Santa Bárbara<br>
+
+        Criciúma - SC<br>
+
+        CEP 88802-050
+
+    </div>
+
+
+    <!-- RODAPÉ -->
+
+    <div class="rodape">
+
+        <div>
+            <i class="fas fa-shield-halved"></i>
+            Atendimento Personalizado
+        </div>
+
+        <div>
+            <i class="fas fa-scale-balanced"></i>
+            Excelência Jurídica
+        </div>
+
+        <div>
+            <i class="fas fa-handshake"></i>
+            Compromisso e Confiança
+        </div>
+
+    </div>
+
 </div>
 
-<div class="arrow">
-<i class="fas fa-chevron-right"></i>
-</div>
+
+<!-- WHATSAPP FLUTUANTE -->
+
+<a
+    class="whatsapp-float"
+    href="https://wa.me/5548991368351"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar pelo WhatsApp"
+>
+
+    <i class="fab fa-whatsapp"></i>
 
 </a>
 
-<a class="card"
-href="https://www.instagram.com/sieglitzesouza"
-target="_blank">
-
-<div class="left">
-<i class="fab fa-instagram"></i>
-<div class="texto">Instagram</div>
-</div>
-
-<div class="arrow">
-<i class="fas fa-chevron-right"></i>
-</div>
-
-</a>
-
-<a class="card"
-href="mailto:contato@sieglitzesouza.com.br">
-
-<div class="left">
-<i class="fas fa-envelope"></i>
-<div class="texto">E-mail</div>
-</div>
-
-<div class="arrow">
-<i class="fas fa-chevron-right"></i>
-</div>
-
-</a>
-
-<a class="card"
-href="https://maps.google.com/?q=Rua+Vitor+Meireles+851+Sala+02+Criciuma+SC"
-target="_blank">
-
-<div class="left">
-<i class="fas fa-location-dot"></i>
-<div class="texto">Como chegar</div>
-</div>
-
-<div class="arrow">
-<i class="fas fa-chevron-right"></i>
-</div>
-
-</a>
-
-<div class="divisor"></div>
-
-<div class="endereco">
-Rua Vitor Meireles, 851, Sala 02<br>
-Santa Bárbara<br>
-Criciúma - SC<br>
-CEP 88802-050
-</div>
-
-<div class="rodape">
-
-<div>
-<i class="fas fa-shield-halved"></i>
-Atendimento Personalizado
-</div>
-
-<div>
-<i class="fas fa-scale-balanced"></i>
-Excelência Jurídica
-</div>
-
-<div>
-<i class="fas fa-handshake"></i>
-Compromisso e Confiança
-</div>
-
-</div>
-
-</div>
-
-<a class="whatsapp-float"
-href="https://wa.me/5548991368351"
-target="_blank"> <i class="fab fa-whatsapp"></i> </a>
 
 </body>
+
 </html>
